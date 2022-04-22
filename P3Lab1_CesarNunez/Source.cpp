@@ -3,7 +3,9 @@
 using namespace std;
 
 int main() {
-	int a, b, c, a2, b2, c2;	
+	int a = 0, b = 0, c = 0, a2, b2, c2;
+	bool raizExacta = false;
+	int resp;
 	char despejar = 'C';
 	cout << "---- Teorema de Pitagoras -----" << endl;
 	cout << "Seleccione incognita: ";
@@ -22,12 +24,31 @@ int main() {
 		b2 = b * b;
 		cout << "Ecuacion: A^2 = " << c << "^2 - " << b << "^2\n";
 		cout << "A^2 = " << c2 << " - " << b2 << endl;
-		cout << "A^2 = " << c2 - b2 << endl;
+		int resta = c2 - b2;
+		cout << "A^2 = " << resta << endl;
+
+		for (int i = 0; i < resta; i++)
+		{
+			if (i * i == resta) {
+				raizExacta = true;
+				resp = i;
+				break;
+			}
+		}		
+		if (raizExacta == true) {
+			cout << "A = " << resp << endl;
+		}
+		else {
+			cout << "La resta de la hipotenusa con el cateto no es una raíz exacta.\n";
+		}
 	}
 	else if (incognita == 2) {
 		cout << "Ecuacion inicial:\nC^2 = A^2 + B^2" << endl;
 		despejar = 'B';
 		cout << "Despejar para B:\nB^2 = C^2 - A^2\n";
+		while (c < 4 || c >= 16) {
+
+		}
 		cout << "Ingresar valor para C: ";
 		cin >> c;
 		c2 = c * c;
@@ -36,7 +57,23 @@ int main() {
 		a2 = a * a;
 		cout << "Ecuacion: B^2 = " << c << "^2 - " << a << "^2\n";
 		cout << "B^2 = " << c2 << " - " << a2 << endl;
-		cout << "B^2 = " << c2 - a2 << endl;
+		int resta = c2 - a2;
+		cout << "B^2 = " << resta << endl;
+
+		for (int i = 0; i < resta; i++)
+		{
+			if (i * i == resta) {
+				raizExacta = true;
+				resp = i;
+				break;
+			}
+		}
+		if (raizExacta == true) {
+			cout << "A = " << resp << endl;
+		}
+		else {
+			cout << "La resta de la hipotenusa con el cateto no es una raíz exacta.\n";
+		}
 	}
 	else if (incognita == 3) {
 		cout << "Ecuacion inicial:\nC^2 = A^2 + B^2" << endl;
@@ -50,7 +87,23 @@ int main() {
 		b2 = b * b;
 		cout << "Ecuacion: C^2 = " << a << "^2 + " << b << "^2\n";
 		cout << "C^2 = " << a2 << " + " << b2 << endl;
-		cout << "C^2 = " << a2 + b2 << endl;
+		int suma = a2 + b2;
+		cout << "C^2 = " << suma << endl;
+
+		for (int i = 0; i < suma; i++)
+		{
+			if (i * i == suma) {
+				raizExacta = true;
+				resp = i;
+				break;
+			}
+		}
+		if (raizExacta == true) {
+			cout << "A = " << resp << endl;
+		}
+		else {
+			cout << "La suma de los catetos son una raiz cuadrada exacta.\n";
+		}
 	}
 	else {
 		cout << "Error";
