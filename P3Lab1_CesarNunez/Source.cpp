@@ -137,7 +137,7 @@ int main() {
 		}
 	}
 	else {
-		cout << "Error";
+		cout << "Error, ingrese un numero!";
 	}
 
 	return 0;
